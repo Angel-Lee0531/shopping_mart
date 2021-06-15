@@ -5,4 +5,5 @@ from veg_market import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('homepage/', views.homepage),
+	path('veg_market/', views.veg_market),
 ]
