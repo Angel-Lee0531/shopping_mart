@@ -1,1 +1,33 @@
-<h1>Welcome to Vegetable Market</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Veg Market</title>
+		<style>
+			table, th, td{
+				border:1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Welcome to Vegetable Market</h1>
+		<table style = 'width:100%'>
+			<tr>
+				<th>Types</th>
+				<th>Name</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Note</th>
+			</tr>	
+			{% for f in food %}
+				<tr>
+					<td>{{f.foodtypes}}</td>
+					<td>{{f.name}}</td>
+					<td>{{f.quantity}}</td>
+					<td>{{f.price}}</td>
+					<td>{{f.note}}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>
+				
