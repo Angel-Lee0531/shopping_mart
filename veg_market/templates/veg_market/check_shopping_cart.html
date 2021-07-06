@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shopping Cart</title>
+		<style>
+			table, th, td{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Your Shopping Cart</h1>
+		<table>
+			<tr>
+				<th>Item</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Stock</th>
+			</tr>
+			{% for item in item %}
+				<tr>
+					<th>{{item.item_name}}</th>
+					<th>{{item.item_quantity}}</th>
+					{% for food in food %}
+						{% if food.name == item.item_name %}
+							<th>{{food.price}}</th>
+							<th>{{food.quantity}}</th>
+						{% endif %}
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
+		<input type = "button" value = "Continue Shopping" onclick = "location.href = '../veg_market/'">
+		<input type = "button" value = "Checkout">
+	</body>
+</html>
